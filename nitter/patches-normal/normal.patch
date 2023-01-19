@@ -16,11 +16,11 @@ index 0831dd0..93d7096 100644
 +FROM ghcr.io/maxisoft/nim-docker-images/nim as build
  
  ARG  REPO=https://github.com/goodtiding5/nitter.git
- 
 @@ -18,20 +18,20 @@
  &&  nimble install -y --depsOnly \
 -&&  nimble build -y -d:release --passC:"-flto" --passL:"-flto" \
 +&&  nimble build -y -d:release -d:zippyNoSimd --passC:"-flto" --passL:"-flto" \
  &&  strip -s nitter \
+ 
 -- 
 2.39.0
